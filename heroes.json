@@ -1,0 +1,55 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": "2c29d2eb-545b-4f75-acc9-3ace608ead4d",
+      "name": "Какой-то герой",
+      "description": "Что-то да и умеет",
+      "element": "water"
+    },
+    {
+      "id": "3e50ab88-d7ce-4d7a-a0f2-365571f64f64",
+      "name": "Скрытый герой",
+      "description": "Скрываться",
+      "element": "wind"
+    },
+    {
+      "id": "4033a522-0cf0-46d9-b5bd-fe13d90623b8",
+      "name": "Непонятный герой",
+      "description": "Ничего не умеет",
+      "element": "earth"
+    }
+  ],
+  "filters": [
+    {
+      "name": "Все",
+      "className": "btn btn-outline-dark",
+      "value": "all"
+    },
+    {
+      "name": "Огонь",
+      "className": "btn btn-danger",
+      "value": "fire"
+    },
+    {
+      "name": "Вода",
+      "className": "btn btn-primary",
+      "value": "water"
+    },
+    {
+      "name": "Ветер",
+      "className": "btn btn-success",
+      "value": "wind"
+    },
+    {
+      "name": "Земля",
+      "className": "btn btn-secondary",
+      "value": "earth"
+    }
+  ]
+}
