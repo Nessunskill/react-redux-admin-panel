@@ -13,16 +13,16 @@
       "element": "water"
     },
     {
-      "id": "3e50ab88-d7ce-4d7a-a0f2-365571f64f64",
-      "name": "Скрытый герой",
-      "description": "Скрываться",
-      "element": "wind"
+      "id": "5c8a15f3-671f-4915-9aac-0f8c115414a4",
+      "name": "Ещё один герой",
+      "description": "Почти ничего не умеет:(",
+      "element": "earth"
     },
     {
-      "id": "4033a522-0cf0-46d9-b5bd-fe13d90623b8",
-      "name": "Непонятный герой",
-      "description": "Ничего не умеет",
-      "element": "earth"
+      "id": "b67c1014-fc60-4b14-8453-659dbc4a8cf6",
+      "name": "Ветряной герой",
+      "description": "Пулять ветром",
+      "element": "wind"
     }
   ],
   "filters": [

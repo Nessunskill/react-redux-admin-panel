@@ -11,7 +11,7 @@ import { setActiveFilter } from "../../actions";
 
 const HeroesFilters = () => {
     const dispatch = useDispatch();
-    const {filters} = useSelector(state => state);
+    const {filters} = useSelector(state => state.filtersReducer);
 
     const setFilterAsActive = (e) => {
         dispatch(setActiveFilter(e.target.getAttribute('data-filter')));
@@ -23,7 +23,6 @@ const HeroesFilters = () => {
 
         e.target.classList.add('active');
     }
-    console.log('render');
 
     return (
         <div className="card shadow-lg mt-4">

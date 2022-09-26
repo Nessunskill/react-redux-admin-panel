@@ -16,7 +16,7 @@ import { useEffect } from 'react';
 
 const HeroesAddForm = () => {
     const {request} = useHttp();
-    const {filters} = useSelector(state => state);
+    const {filters} = useSelector(state => state.filtersReducer);
     const dispatch = useDispatch();
 
     const [name, setName] = useState('');

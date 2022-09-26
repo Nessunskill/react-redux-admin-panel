@@ -1,11 +1,11 @@
 import {useHttp} from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { createSelector } from 'reselect'
 
 import { heroesFetching, heroesFetched, heroesFetchingError } from '../../actions';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
-import { useState } from 'react';
 
 // Задача для этого компонента:
 // При клике на "крестик" идет удаление персонажа из общего состояния
@@ -13,33 +13,31 @@ import { useState } from 'react';
 // Удаление идет и с json файла при помощи метода DELETE
 
 const HeroesList = () => {
-    const {heroesLoadingStatus, activeFilter, heroes} = useSelector(state => state);
+    const filteredHeroesSelector = createSelector(
+        filter => filter.filtersReducer.activeFilter,
+        heores => heores.heroesReducer.heroes,
+        (filter, heroes) => {
+            if (filter === 'all') {
+                return heroes;
+            } else {
+                return heroes.filter(item => item.element === filter);
+            }
+        }
+    )
+
+    const heroesLoadingStatus = useSelector(state => state.heroesReducer.heroesLoadingStatus);
     const dispatch = useDispatch();
     const {request} = useHttp();
-    const [filteredHeroes, setFilteredHeroes] = useState(heroes);
+
+    const filteredHeroes = useSelector(filteredHeroesSelector);
 
     useEffect(() => {
-        dispatch(heroesFetching());
+        dispatch('HEROES_FETCHING');
         request("http://localhost:3001/heroes")
             .then(data => dispatch(heroesFetched(data)))
-            .then(data => setFilteredHeroes(data.payload))
             .catch(() => dispatch(heroesFetchingError()))
         // eslint-disable-next-line
     }, []);
-
-    useEffect(() => {
-        if (activeFilter !== 'all') {
-            // eslint-disable-next-line
-            const filterHeroes = heroes.filter(item => {
-                if (item.element === activeFilter) return item
-            });
-    
-            setFilteredHeroes(filterHeroes);
-        } else {
-            setFilteredHeroes(heroes);
-        }
-
-    }, [activeFilter, heroes]);
 
     if (heroesLoadingStatus === "loading") {
         return <Spinner/>;
