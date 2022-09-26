@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useHttp } from '../../hooks/http.hook';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { addHero, fetchFilters, myAction } from '../../actions';
+import { addHero, fetchFilters } from '../../actions';
 import { useEffect } from 'react';
 
 const HeroesAddForm = () => {
