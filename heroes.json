@@ -23,6 +23,12 @@
       "name": "Ветряной герой",
       "description": "Пулять ветром",
       "element": "wind"
+    },
+    {
+      "id": "e9120dfc-3f01-467f-a701-63b9af1c7784",
+      "name": "Водяной герой",
+      "description": "Да этот вообще ничего не знает",
+      "element": "water"
     }
   ],
   "filters": [
